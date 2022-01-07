@@ -93,11 +93,11 @@ export default function Header() {
 
       <div className="section-grid mt-3">
         {Object.keys(info).map(function (keyName, keyIndex) {
-          return info[keyIndex].data.thumbnail === "self" ? (
+          return info[keyIndex].data.url.substring(0,18) !== "https://i.redd.it/" ? (
             <></>
           ) : (
             <CardSection
-              url={info[keyIndex].data.thumbnail}
+              url={info[keyIndex].data.url}
               title={info[keyIndex].data.title}
               no_of_comments={info[keyIndex].data.num_comments}
             />
